@@ -1,4 +1,2 @@
-# Vorlage zu Hausübung 01
-
-Beachten Sie die Hinweise zum Herunterladen, Importieren, Bearbeitern, Exportieren und Hochladen in unserem
-[Studierenden-Guide](https://wiki.tudalgo.org/)
+# FOP-2324-H01-SobuHasy
+Project for University studies (Java exercise)
