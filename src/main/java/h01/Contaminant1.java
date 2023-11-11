@@ -4,7 +4,9 @@ import fopbot.Direction;
 import fopbot.Robot;
 import fopbot.RobotFamily;
 import h01.template.Contaminant;
+import h01.template.GameConstants;
 import h01.template.TickBased;
+import h01.template.Utils;
 import org.tudalgo.algoutils.student.Student;
 
 /**
@@ -39,7 +41,24 @@ public class Contaminant1 extends Robot implements Contaminant, TickBased {
         if (isTurnedOff()){
             return;
         }
-        
+
+        // Lay random amount of coins between 1 and 5
+        // Legt eine zufällige Anzahl von Münzen zwischen 1 und 5
+        // Așează o sumă aleatorie de monede între 1 și 5
+        // 1～5枚のコインをランダムに置く
+        if (!isOnACoin() || Utils.getCoinAmount(getX(), getY()) < 20){
+            final int amount = Utils.getRandomInteger(
+                GameConstants.CONTAMINANT_ONE_MIN_PUT_COINS,
+                GameConstants.CONTAMINANT_ONE_MAX_PUT_COINS
+            );
+        }
+        for (int i = 0; i < amount; i++){
+            if (!hasAnyCoins() || Utils.getCoinAmount(getX(), getY()) >= 20){
+                break;
+            }
+            putCoin();
+        }
+
         Student.crash("H2.1 - remove if implemented");
     }
 }
