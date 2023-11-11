@@ -32,6 +32,14 @@ public class Contaminant1 extends Robot implements Contaminant, TickBased {
     @Override
     public void doMove() {
         // TODO: H2.1
+        if (getNumberOfCoins() == 0){
+            turnOff();
+            return;
+        }
+        if (isTurnedOff()){
+            return;
+        }
+        
         Student.crash("H2.1 - remove if implemented");
     }
 }
