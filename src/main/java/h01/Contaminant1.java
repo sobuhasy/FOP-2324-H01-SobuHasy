@@ -47,11 +47,11 @@ public class Contaminant1 extends Robot implements Contaminant, TickBased {
         // Așează o sumă aleatorie de monede între 1 și 5
         // 1～5枚のコインをランダムに置く
         if (!isOnACoin() || Utils.getCoinAmount(getX(), getY()) < 20){
-            final int amount = Utils.getRandomInteger(
+            final int quantity = Utils.getRandomInteger(
                 GameConstants.CONTAMINANT_ONE_MIN_PUT_COINS,
                 GameConstants.CONTAMINANT_ONE_MAX_PUT_COINS
             );
-            for (int i = 0; i < amount; i++){
+            for (int i = 0; i < quantity; i++){
                 if (!hasAnyCoins() || Utils.getCoinAmount(getX(), getY()) >= 20){
                     break;
                 }
