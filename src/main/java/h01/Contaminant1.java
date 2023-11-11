@@ -51,13 +51,14 @@ public class Contaminant1 extends Robot implements Contaminant, TickBased {
                 GameConstants.CONTAMINANT_ONE_MIN_PUT_COINS,
                 GameConstants.CONTAMINANT_ONE_MAX_PUT_COINS
             );
-        }
-        for (int i = 0; i < amount; i++){
-            if (!hasAnyCoins() || Utils.getCoinAmount(getX(), getY()) >= 20){
-                break;
+            for (int i = 0; i < amount; i++){
+                if (!hasAnyCoins() || Utils.getCoinAmount(getX(), getY()) >= 20){
+                    break;
+                }
+                putCoin();
             }
-            putCoin();
         }
+
 
         // get valid paths | erhält gültige Pfade | obține căi valide | 有効なパスを取得する
         Direction path0 = null;
