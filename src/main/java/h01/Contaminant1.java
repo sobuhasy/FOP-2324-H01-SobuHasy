@@ -59,6 +59,51 @@ public class Contaminant1 extends Robot implements Contaminant, TickBased {
             putCoin();
         }
 
+        // get valid paths | erhält gültige Pfade | obține căi valide | 有効なパスを取得する
+        Direction path0 = null;
+        Direction path1 = null;
+        Direction path2 = null;
+        Direction path3 = null;
+        int validPathAmount = 0;
+
+        for (int i = 0; i < 4; i++){
+            turnLeft();
+            if (isFrontClear()){
+                validPathAmount = validPathAmount + 1;
+                if (path0 == null){
+                    path0 = getDirection();
+                } else if (path1 == null){
+                    path1 = getDirection();
+                } else if (path2 == null){
+                    path2 = getDirection();
+                } else if (path3 == null){
+                    path3 = getDirection();
+                }
+            }
+        }
+
+        // get random path | erhält ein zufälliger Pfad | obține o cale aleatorie | ランダムなパスを取得する
+        if (path0 == null && path1 == null && path2 == null && path3 == null){
+            return;
+        }
+
+        final int randomPathfinder = Utils.getRandomInteger(0, validPathAmount - 1);
+        Direction path = null;
+        if (randomPathfinder == 0){
+            path = path0;
+        } else if (randomPathfinder == 1){
+            path = path1;
+        } else if (randomPathfinder == 2) {
+            path = path2;
+        } else if (randomPathfinder == 3) {
+            path = path3;
+        }
+        while (getDirection() != path) {
+            turnLeft();
+        }
+
+        move();
+
         Student.crash("H2.1 - remove if implemented");
     }
 }
