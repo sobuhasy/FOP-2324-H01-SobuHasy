@@ -71,13 +71,33 @@ public class Contaminant2 extends Robot implements Contaminant, TickBased {
             }
 
             // check if there are any paths
+            // prüfen, ob es Pfade gibt
+            // verifică dacă există căi de acces
+            // パスがあるかチェックする
             if (validPathAmount == 0) {
                 return;
             }
 
-        }
+            // orient on left wall
+            // an der linken Wand orientieren
+            // orientare pe peretele din stânga
+            // 左の壁
+            Direction direction = null;
+            if (left != null){
+                direction = left;
+            } else if (front != null) {
+                direction = front;
+            } else if (right != null) {
+                direction = right;
+            } else if (back != null) {
+                direction = back;
+            }
 
+            while (getDirection() != direction){
+                turnLeft();
+            }
+            move();
         }
-        Student.crash("H2.2 - remove if implemented");
     }
+    Student.crash("H2.2 - remove if implemented");
 }
