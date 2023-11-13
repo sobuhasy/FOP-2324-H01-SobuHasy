@@ -51,7 +51,33 @@ public class Contaminant2 extends Robot implements Contaminant, TickBased {
         }
 
         // get valid paths | erhält gültige Pfade | obține căi valide | 有効なパスを取得する
-        
+        Direction left = null;
+        Direction back = null;
+        Direction right = null;
+        Direction front = null;
+        int validPathAmount = 0;
+        for (int i = 0; i < 4; i++){
+            turnLeft();
+            if (isFrontClear()){
+                if (i==0){
+                    left = getDirection();
+                } else if (i == 1) {
+                    back = getDirection();
+                } else if (i == 2) {
+                    right = getDirection();
+                } else if (i == 3) {
+                    front = getDirection();
+                }
+            }
+
+            // check if there are any paths
+            if (validPathAmount == 0) {
+                return;
+            }
+
+        }
+
+        }
         Student.crash("H2.2 - remove if implemented");
     }
 }
