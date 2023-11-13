@@ -5,6 +5,7 @@ import fopbot.Robot;
 import fopbot.RobotFamily;
 import h01.template.Contaminant;
 import h01.template.TickBased;
+import h01.template.Utils;
 import org.tudalgo.algoutils.student.Student;
 
 /**
@@ -32,6 +33,25 @@ public class Contaminant2 extends Robot implements Contaminant, TickBased {
     @Override
     public void doMove() {
         // TODO: H2.2
+        if (getNumberOfCoins() == 0){
+            turnOff();
+            return;
+        }
+        if (isTurnedOff()){
+            return;
+        }
+        // lay 2 coins | legt 2 Münzen | așează 2 monezi | 2枚のコインに置く
+        if (!isOnACoin() || Utils.getCoinAmount(getX(), getY()) < 2){
+            for(int i = 0; i < 2; i++){
+                if(!hasAnyCoins() || Utils.getCoinAmount(getX(), getY()) >= 2){
+                    break;
+                }
+                putCoin();
+            }
+        }
+
+        // get valid paths | erhält gültige Pfade | obține căi valide | 有効なパスを取得する
+        
         Student.crash("H2.2 - remove if implemented");
     }
 }
