@@ -34,10 +34,13 @@ public class CleaningRobot extends Robot implements Cleaner, TickBased {
             pickCoin();
         }
         if (direction >= 0 && direction < 4){
-            // Direction 0
+            // Direction 0 | Richtung 0 | Direcția 0 | 方向０
             int dx = 0;
             int dy = 1;
             // rotation of the direction by 90 degrees to right
+            // Drehung der Richtung um 90 Grad nach rechts
+            // rotirea direcției cu 90 de grade spre dreapta
+            // 右90度回転
             for (int d=0; d < direction; d++){
                 final int tmp = dx;
                 dx = dy;
