@@ -41,7 +41,7 @@ public class CleaningRobot extends Robot implements Cleaner, TickBased {
             // Drehung der Richtung um 90 Grad nach rechts
             // rotirea direcției cu 90 de grade spre dreapta
             // 右90度回転
-            for (int d=0; d < direction; d++){
+            for (int i=0; i < direction; i++){
                 final int tmp = dx;
                 dx = dy;
                 dy = -tmp;
