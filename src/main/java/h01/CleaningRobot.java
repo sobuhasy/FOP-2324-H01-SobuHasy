@@ -52,9 +52,7 @@ public class CleaningRobot extends Robot implements Cleaner, TickBased {
             if(isFrontClear()){
                 move();
             }
-            if (getDirection().getDx() == dx || getDirection().getDy() == dy){
-                turnOff();
-            }
+
         }
         Student.crash("H1 - remove if implemented");
     }
