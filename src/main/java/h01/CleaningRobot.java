@@ -54,6 +54,5 @@ public class CleaningRobot extends Robot implements Cleaner, TickBased {
             }
 
         }
-        Student.crash("H1 - remove if implemented");
     }
 }

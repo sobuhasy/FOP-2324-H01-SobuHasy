@@ -51,7 +51,5 @@ public class GameController extends GameControllerBase {
             System.out.println("Cleaning robot won!");
             stopGame();
         }
-
-        Student.crash("H3 - remove if implemented");
     }
 }

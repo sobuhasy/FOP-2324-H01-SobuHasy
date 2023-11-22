@@ -98,6 +98,5 @@ public class Contaminant2 extends Robot implements Contaminant, TickBased {
             }
             move();
         }
-        Student.crash("H2.2 - remove if implemented");
     }
 }
